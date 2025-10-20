@@ -42,22 +42,24 @@ body {
   display: flex;
 }
 
-ul {
+.todo-list {
   margin: 0;
   padding: 0;
 }
 
-li,
-h3 {
+.todo-title {
   list-style: none;
 }
 
-input,
-button {
+.task-row-wrapper .task,
+.task-row-wrapper button,
+.todo-item .task,
+.todo-item .edit-button,
+.todo-item .delete-button {
   outline: none;
 }
 
-li {
+.todo-item {
   list-style: none;
   overflow: hidden;
   padding: 20px 0;
@@ -67,12 +69,12 @@ li {
   align-items: center;
 }
 
-h3 {
+.todo-title {
   list-style: none;
 }
 
 /* Heading */
-h3,
+.todo-title,
 label[for="new-task"] {
   color: #333;
   font-weight: 700;
@@ -111,7 +113,7 @@ input#new-task {
 }
 
 /* Task list */
-li {
+.todo-item {
   overflow: hidden;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
@@ -121,22 +123,22 @@ li {
   align-items: center;
 }
 
-li>* {
+.todo-item > * {
   vertical-align: middle;
 }
 
-li>input[type="checkbox"] {
+.todo-item > input[type="checkbox"] {
   margin: 0 10px;
 }
 
-li>label {
+.todo-item > label {
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
   width: 226px;
 }
 
-li>input[type="text"] {
+.todo-item > input[type="text"] {
   width: 226px
 }
 
@@ -151,20 +153,20 @@ button.delete-button img:hover {
 }
 
 /* Completed */
-ul#completed-tasks label {
+.todo-item.completed label {
   text-decoration: line-through color: #888;
 }
 
 /* Edit Task */
-ul li input[type=text] {
+.todo-item input[type=text] {
   display: none
 }
 
-ul li.edit-mode input[type=text] {
+.todo-item.edit-mode input[type=text] {
   display: inline-block;
   width: 224px
 }
 
-ul li.edit-mode label {
+.todo-item.edit-mode label {
   display: none;
 }
